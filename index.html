@@ -27,51 +27,40 @@
     </style>
   </head>
   <body>
-    <div class="splitter">
-      <h1>Spli</h1>
-      <h1>tter</h1>
+    <div class="logo">
+      <img src="/images/logo.svg" alt="logo" />
     </div>
-
-    <div class="calc-container">
-      <div class="left">
-        <div class="bill">
-          <p>Bill</p>
-          <div class="bill__input">
-            <img src="images/icon-dollar.svg" alt="dollar sign" />
-            <input type="number" placeholder="enter your bill" />
+    <div class="container">
+      <div class="container__input">
+        <div class="input__bill">
+          <p class="label">Bill</p>
+          <div class="input__bill-input inputBox">
+            <img src="/images/icon-dollar.svg" alt="dollar-sign" />
+            <input type="text" />
           </div>
         </div>
-        <div class="tip">
-          <p>Select Tip %</p>
-          <div class="tip__options">
-            <div class="tip__options-option"><h3>5%</h3></div>
-            <div class="tip__options-option"><h3>10%</h3></div>
-            <div class="tip__options-option"><h3>15%</h3></div>
-            <div class="tip__options-option"><h3>25%</h3></div>
-            <div class="tip__options-option"><h3>50%</h3></div>
-            <div class="tip__options-option_input">
-              <input type="number" />
+        <div class="input__tip">
+          <p class="label-tip">Select Tip %</p>
+          <div class="input__tip-options">
+            <div class="input__tip-options-option">5%</div>
+            <div class="input__tip-options-option">10%</div>
+            <div class="input__tip-options-option active">15%</div>
+            <div class="input__tip-options-option">25%</div>
+            <div class="input__tip-options-option">50%</div>
+            <div class="input__tip-options-option">
+              <input type="text" placeholder="Custom" />
             </div>
           </div>
         </div>
-        <div class="people">
-          <div class="people__label">
-            <p>Number of People</p>
-            <p class="zero">Can't be zero</p>
-          </div>
-          <div class="people__input">
-            <img src="images/icon-person.svg" alt="person icon" />
-            <input type="number" />
+        <div class="input__people">
+          <p class="label">Number of People</p>
+          <div class="input__people-input inputBox">
+            <img src="/images/icon-person.svg" alt="person-icon" />
+            <input type="text" />
           </div>
         </div>
       </div>
-      <div class="right">
-        <div class="calculations">
-          <div class="calculations__tip"></div>
-          <div class="calculations__total"></div>
-        </div>
-        <button class="reset-btn">reset</button>
-      </div>
+      <div class="container__output"></div>
     </div>
     <!-- <div class="attribution">
       Challenge by

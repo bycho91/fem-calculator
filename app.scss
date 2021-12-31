@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&family=Space+Mono:wght@400;700&display=swap");
 
-:root {
-  --strong-cyan: hsl(172, 67%, 45%);
-  --dark-cyan: hsl(183, 100%, 15%);
-  --dark-grayish-cyan1: hsl(186, 14%, 43%);
-  --dark-grayish-cyan2: hsl(184, 14%, 56%);
-  --light-grayish-cyan1: hsl(185, 41%, 84%);
-  --light-grayish-cyan2: hsl(189, 41%, 97%);
-  --font-family: "Space Mono", sans-serif;
-}
+$strong-cyan: hsl(172, 67%, 45%);
+$dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan1: hsl(186, 14%, 43%);
+$dark-grayish-cyan2: hsl(184, 14%, 56%);
+$light-grayish-cyan1: hsl(185, 41%, 84%);
+$light-grayish-cyan2: hsl(189, 41%, 97%);
+$font-family: "Space Mono", sans-serif;
 
 * {
   margin: 0;
@@ -16,98 +14,119 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: $font-family;
+  color: $dark-grayish-cyan1;
+}
+
 body {
-  background: var(--light-grayish-cyan1);
-  font-family: var(--font-family);
-  width: 100vw;
-  height: 100vh;
+  background: $light-grayish-cyan1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.splitter {
-  position: absolute;
-  left: 50%;
-  top: 5%;
-  transform: translateX(-50%);
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--dark-cyan);
+input {
+  background: none;
+  border: none;
+  outline: none;
+  text-align: right;
+  &:focus {
+    outline: none;
+  }
 }
 
-.calc-container {
-  display: flex;
+.logo {
+  margin: 50px 0 35px 0;
+}
+
+.container {
   background: white;
-  border-radius: 1em;
-  width: 60%;
-  height: 550px;
-  border: 1px solid white;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 900px;
-  max-width: 1080px;
-}
-
-.left {
-  flex: 1;
   width: 100%;
-  height: 90%;
-  border-radius: 2em;
-  margin: 2em;
+  height: 100vh;
+  border-radius: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 2em;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-.bill__input {
-  width: 100%;
-  border-radius: 0.5em;
-  border: 2px solid var(--strong-cyan);
+.label {
+  margin-bottom: 0.5em;
+}
+
+.label-tip {
+  margin-bottom: 1.5em;
+}
+
+.inputBox {
+  background: $light-grayish-cyan2;
   display: flex;
   align-items: center;
-  padding: 0.7em 1em;
-  background: var(--light-grayish-cyan2);
-  margin-top: 0.5em;
+  padding: 0.4em 1em;
+  border-radius: 0.4em;
 
   input {
     border: none;
     outline: none;
     background: none;
-    width: 100%;
     text-align: right;
-    font-size: 20px;
-    font-family: var(--font-family);
-    font-weight: bold;
-    color: var(--dark-cyan);
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    color: $dark-cyan;
+    font-family: $font-family;
 
-    &::placeholder {
-      color: var(--dark-grayish-cyan1);
-      font-weight: bold;
-      font-family: var(--font-family);
+    &:focus {
+      outline: none;
     }
   }
 }
 
-.right {
-  flex: 1;
-  width: 100%;
-  height: 90%;
-  border-radius: 1em;
-  background: var(--dark-cyan);
-  margin: 2em;
-  display: flex;
-  box-sizing: border-box;
-  padding: 2em;
-  flex-direction: column;
+.input__bill,
+.input__tip,
+.input__people {
+  margin-bottom: 2.5em;
 }
 
-.reset-btn {
-  background: var(--light-grayish-cyan1);
-  border: none;
-  outline: none;
-  border-radius: 0.5em;
-  padding: 1em;
-  color: var(--dark-cyan);
-  text-transform: uppercase;
-  font-weight: 800;
+.input__tip-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1em;
+
+  &-option {
+    text-align: center;
+    background: hsl(183, 100%, 15%);
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 0.2em;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+
+    &:last-child {
+      background: hsl(189, 41%, 97%);
+    }
+
+    input {
+      text-align: center;
+      font-family: $font-family;
+      font-size: 24px;
+      font-weight: 700;
+      color: hsl(183, 100%, 15%);
+
+      &::placeholder {
+        font-family: $font-family;
+        font-size: 24px;
+        font-weight: 700;
+        color: hsl(186, 14%, 43%);
+      }
+    }
+
+    &.active {
+      background: hsl(172, 67%, 45%);
+      color: hsl(183, 100%, 15%);
+    }
+  }
 }

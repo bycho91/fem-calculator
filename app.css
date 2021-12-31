@@ -162,6 +162,8 @@ input:focus {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .btns-wrapper .btn.btn-custom #input-custom-tip {
@@ -171,10 +173,13 @@ input:focus {
   font-weight: 700;
   font-family: "Space Mono", sans-serif;
   font-size: 24px;
-  padding: 0.2em 0.7em;
   width: 90%;
   color: #00494d;
   text-align: center;
+}
+
+.btns-wrapper .btn.btn-custom #input-custom-tip:focus {
+  border: 2px solid #26c0ab;
 }
 
 .btns-wrapper .btn.btn-custom span {
@@ -183,7 +188,6 @@ input:focus {
   position: absolute;
   color: #7f9c9f;
   right: 0;
-  top: 0.5em;
 }
 
 .alert-error {
@@ -204,10 +208,23 @@ input:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 1.5em;
 }
 
-.card-output .line-wrapper {
+.card-output .results-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-output .results-container .line-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,20 +236,20 @@ input:focus {
           justify-content: space-between;
 }
 
-.card-output .line-wrapper .info-container {
+.card-output .results-container .line-wrapper .info-container {
   font-weight: 700;
 }
 
-.card-output .line-wrapper .info-container .title {
+.card-output .results-container .line-wrapper .info-container .title {
   font-size: 1rem;
   color: white;
 }
 
-.card-output .line-wrapper .info-container .subtitle {
+.card-output .results-container .line-wrapper .info-container .subtitle {
   font-size: 0.8rem;
 }
 
-.card-output .line-wrapper .result-container {
+.card-output .results-container .line-wrapper .value {
   font-weight: 800;
   color: #26c0ab;
 }
@@ -248,5 +265,28 @@ input:focus {
   padding: 0.4em 0;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.card-output button:hover {
+  background: #7f9c9f;
+}
+
+@media screen and (min-width: 750px) {
+  .card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    max-width: 1080px;
+  }
+  .btns-wrapper > .btn {
+    width: 29%;
+  }
+  .card-output {
+    height: 400px;
+  }
+  .card-output .results-container {
+    gap: 1.5em;
+  }
 }
 /*# sourceMappingURL=app.css.map */

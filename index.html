@@ -30,37 +30,84 @@
     <div class="logo">
       <img src="/images/logo.svg" alt="logo" />
     </div>
-    <div class="container">
-      <div class="container__input">
-        <div class="input__bill">
-          <p class="label">Bill</p>
-          <div class="input__bill-input inputBox">
-            <img src="/images/icon-dollar.svg" alt="dollar-sign" />
-            <input type="text" />
+    <div class="card">
+      <div class="card-input">
+        <!-- bill container -->
+        <div class="container-bill">
+          <div class="label-wrapper">
+            <label for="input-bill">Bill</label>
+          </div>
+          <div class="input-wrapper">
+            <img src="/images/icon-dollar.svg" alt="dollar-icon" />
+            <input
+              type="text"
+              class="input-text"
+              name="input-bill"
+              id="input-bill"
+              placeholder="0"
+            />
           </div>
         </div>
-        <div class="input__tip">
-          <p class="label-tip">Select Tip %</p>
-          <div class="input__tip-options">
-            <div class="input__tip-options-option">5%</div>
-            <div class="input__tip-options-option">10%</div>
-            <div class="input__tip-options-option active">15%</div>
-            <div class="input__tip-options-option">25%</div>
-            <div class="input__tip-options-option">50%</div>
-            <div class="input__tip-options-option">
-              <input type="text" placeholder="Custom" />
+
+        <!-- tip container -->
+        <div class="container-tip">
+          <div class="label-wrapper">
+            <label for="input-tip">Select Tip %</label>
+          </div>
+          <div class="btns-wrapper">
+            <div class="btn">5%</div>
+            <div class="btn">10%</div>
+            <div class="btn btn-active">15%</div>
+            <div class="btn">25%</div>
+            <div class="btn">50%</div>
+            <div class="btn btn-custom">
+              <input type="text" placeholder="Custom" id="input-custom-tip" />
+              <span>%</span>
             </div>
           </div>
         </div>
-        <div class="input__people">
-          <p class="label">Number of People</p>
-          <div class="input__people-input inputBox">
+
+        <!-- people container -->
+        <div class="container-people">
+          <div class="label-wrapper">
+            <label for="input-bill">Number of People</label>
+            <div class="alert-error">Can't be zero</div>
+          </div>
+          <div class="input-wrapper">
             <img src="/images/icon-person.svg" alt="person-icon" />
-            <input type="text" />
+            <input
+              type="text"
+              class="input-text"
+              name="input-people"
+              id="input-people"
+              placeholder="1"
+            />
           </div>
         </div>
       </div>
-      <div class="container__output"></div>
+      <div class="card-output">
+        <div class="line-wrapper">
+          <div class="info-container">
+            <p class="title">Tip Amount</p>
+            <p class="subtitle">/ person</p>
+          </div>
+          <div class="result-container">
+            <h1 id="tip-amt">$4.27</h1>
+          </div>
+        </div>
+
+        <div class="line-wrapper">
+          <div class="info-container">
+            <p class="title">Total</p>
+            <p class="subtitle">/ person</p>
+          </div>
+          <div class="result-container">
+            <h1 id="total-amt">$32.79</h1>
+          </div>
+        </div>
+
+        <button>Reset</button>
+      </div>
     </div>
     <!-- <div class="attribution">
       Challenge by

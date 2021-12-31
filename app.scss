@@ -24,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 input {
@@ -40,93 +41,171 @@ input {
   margin: 50px 0 35px 0;
 }
 
-.container {
+.card {
   background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
+  gap: 2em;
   border-radius: 1.5em;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 2em;
   font-weight: 700;
-  font-size: 15px;
 }
 
-.label {
-  margin-bottom: 0.5em;
-}
-
-.label-tip {
-  margin-bottom: 1.5em;
-}
-
-.inputBox {
-  background: $light-grayish-cyan2;
+.card-input {
   display: flex;
-  align-items: center;
-  padding: 0.4em 1em;
-  border-radius: 0.4em;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 
-  input {
-    border: none;
-    outline: none;
-    background: none;
-    text-align: right;
-    width: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    color: $dark-cyan;
-    font-family: $font-family;
-
+  // general
+  .label-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-weight: 800;
+    margin-bottom: 0.5em;
     &:focus {
-      outline: none;
+      border: 1px solid $strong-cyan;
+    }
+  }
+
+  .input-wrapper {
+    display: flex;
+    position: relative;
+
+    .input-text {
+      font-size: 24px;
+      color: $dark-cyan;
+      width: 100%;
+      font-weight: 700;
+      font-family: $font-family;
+      background: $light-grayish-cyan2;
+      padding: 0.2em 0.7em;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: none;
+        border: 2px solid $strong-cyan;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 0.7em;
+      top: 0.9em;
+    }
+  }
+
+  // bill
+
+  // tip
+
+  // # people
+}
+
+.btns-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1.1em;
+  margin-top: 1.2em;
+
+  .btn {
+    width: 46%;
+    background: $dark-cyan;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    padding: 5px 0;
+    cursor: pointer;
+
+    &-active {
+      background: $strong-cyan;
+      color: $dark-cyan;
+    }
+
+    &.btn-custom {
+      background: $light-grayish-cyan2;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      #input-custom-tip {
+        background: none;
+        color: $dark-grayish-cyan2;
+        width: 100%;
+        font-weight: 700;
+        font-family: $font-family;
+        font-size: 24px;
+        padding: 0.2em 0.7em;
+        width: 90%;
+
+        color: $dark-cyan;
+        text-align: center;
+      }
+
+      span {
+        padding-right: 0.5em;
+        margin-left: -0.5em;
+        position: absolute;
+        color: $dark-grayish-cyan2;
+        right: 0;
+        top: 0.5em;
+      }
     }
   }
 }
 
-.input__bill,
-.input__tip,
-.input__people {
-  margin-bottom: 2.5em;
+.alert-error {
+  display: none;
+  color: indianred;
+  font-size: 0.8rem;
 }
 
-.input__tip-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-gap: 1em;
+.card-output {
+  width: 105%;
+  background: hsl(183, 100%, 15%);
+  border-radius: 1em;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 
-  &-option {
-    text-align: center;
-    background: hsl(183, 100%, 15%);
-    color: white;
-    font-size: 24px;
-    border-radius: 5px;
-    padding: 0.2em;
-    overflow-x: hidden;
+  .line-wrapper {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 
-    &:last-child {
-      background: hsl(189, 41%, 97%);
-    }
-
-    input {
-      text-align: center;
-      font-family: $font-family;
-      font-size: 24px;
+    .info-container {
       font-weight: 700;
-      color: hsl(183, 100%, 15%);
+      .title {
+        font-size: 1rem;
+        color: white;
+      }
 
-      &::placeholder {
-        font-family: $font-family;
-        font-size: 24px;
-        font-weight: 700;
-        color: hsl(186, 14%, 43%);
+      .subtitle {
+        font-size: 0.8rem;
       }
     }
 
-    &.active {
-      background: hsl(172, 67%, 45%);
-      color: hsl(183, 100%, 15%);
+    .result-container {
+      font-weight: 800;
+      color: $strong-cyan;
     }
+  }
+  button {
+    background: $strong-cyan;
+    color: $dark-cyan;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.4em 0;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }

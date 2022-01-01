@@ -94,7 +94,7 @@ input:focus {
 }
 
 .card-input .label-wrapper:focus {
-  border: 1px solid #26c0ab;
+  outline: 2px solid #26c0ab;
 }
 
 .card-input .input-wrapper {
@@ -114,11 +114,11 @@ input:focus {
   padding: 0.2em 0.7em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .card-input .input-wrapper .input-text:focus {
-  outline: none;
-  border: 2px solid #26c0ab;
+  outline: 2px solid #26c0ab;
 }
 
 .card-input .input-wrapper img {
@@ -153,41 +153,19 @@ input:focus {
   color: #00494d;
 }
 
-.btns-wrapper .btn.btn-custom {
+.btns-wrapper #input-custom-tip {
   background: #f4fafa;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.btns-wrapper .btn.btn-custom #input-custom-tip {
-  background: none;
-  color: #7f9c9f;
-  width: 100%;
+  color: #00494d;
   font-weight: 700;
   font-family: "Space Mono", sans-serif;
   font-size: 24px;
-  width: 90%;
-  color: #00494d;
   text-align: center;
 }
 
-.btns-wrapper .btn.btn-custom #input-custom-tip:focus {
-  border: 2px solid #26c0ab;
-}
-
-.btns-wrapper .btn.btn-custom span {
-  padding-right: 0.5em;
-  margin-left: -0.5em;
-  position: absolute;
-  color: #7f9c9f;
-  right: 0;
+.btns-wrapper #input-custom-tip:focus {
+  outline: 2px solid #26c0ab;
 }
 
 .alert-error {

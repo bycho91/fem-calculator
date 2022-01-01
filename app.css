@@ -127,6 +127,24 @@ input:focus {
   top: 0.9em;
 }
 
+.card-input button {
+  background: #00494d;
+  color: #26c0ab;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2em 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Space Mono", sans-serif;
+}
+
+.card-input button:hover {
+  background: #7f9c9f;
+}
+
 .btns-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -240,9 +258,10 @@ input:focus {
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0.4em 0;
+  padding: 0.2em 0;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Space Mono", sans-serif;
 }
 
 .card-output button:hover {
@@ -261,7 +280,7 @@ input:focus {
     width: 29%;
   }
   .card-output {
-    height: 400px;
+    height: 450px;
   }
   .card-output .results-container {
     gap: 1.5em;

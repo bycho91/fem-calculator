@@ -18,6 +18,10 @@ document.querySelector('.btns-wrapper').addEventListener('click', (e) => {
 })
 
 const calculate = async () => {
+    if(parseInt(people.value) <= 0) {
+        document.querySelector('.alert-error').style.display = 'block';
+        return;
+    }
     let inputTipEl = await document.querySelector('.btn-active');
     
     if(inputTipEl.classList.contains('custom-btn')) {
@@ -35,12 +39,28 @@ const calculate = async () => {
     }
 }
 
-document.addEventListener('keydown', e => {
-    if(e.key === 'Enter') {
-        calculate().then(({tipPerPerson, billPerPerson}) => {
-            resultTip.innerText = `$${tipPerPerson.toFixed(2)}`;
-            resultBill.innerText = `$${billPerPerson.toFixed(2)}`;
-        })
-    }
+// document.addEventListener('keydown', e => {
+//     if(e.key === 'Enter') {
+//         calculate().then(({tipPerPerson, billPerPerson}) => {
+//             resultTip.innerText = `$${tipPerPerson.toFixed(2)}`;
+//             resultBill.innerText = `$${billPerPerson.toFixed(2)}`;
+//         })
+//     }
+// })
+
+document.querySelector('#split-btn').addEventListener('click', () => {
+    calculate().then(({tipPerPerson, billPerPerson}) => {
+        resultTip.innerText = `$${tipPerPerson.toFixed(2)}`;
+        resultBill.innerText = `$${billPerPerson.toFixed(2)}`;
+    })
+})
+
+document.querySelector('#reset-btn').addEventListener('click', () => {
+    bill.value = '';
+    customTip.value = '';
+    people.value = '';
+    resultTip.innerText = '$0.00';
+    resultBill.innerText = '$0.00';
+    document.querySelector('.alert-error').style.display = 'none';
 })
 

@@ -36,6 +36,7 @@
         <div class="container-bill">
           <div class="label-wrapper">
             <label for="input-bill">Bill</label>
+            <div class="alert-error error-bill">Enter a valid bill amt</div>
           </div>
           <div class="input-wrapper">
             <img src="/images/icon-dollar.svg" alt="dollar-icon" />
@@ -44,7 +45,7 @@
               class="input-text"
               name="input-bill"
               id="input-bill"
-              placeholder="0"
+              placeholder="0.00"
             />
           </div>
         </div>
@@ -60,7 +61,12 @@
             <div class="btn">15%</div>
             <div class="btn">25%</div>
             <div class="btn">50%</div>
-            <input class='btn custom-btn' type="text" placeholder="Custom" id="input-custom-tip" />
+            <input
+              class="btn custom-btn"
+              type="text"
+              placeholder="Custom"
+              id="input-custom-tip"
+            />
           </div>
         </div>
 
@@ -68,16 +74,15 @@
         <div class="container-people">
           <div class="label-wrapper">
             <label for="input-bill">Number of People</label>
-            <div class="alert-error">Can't be zero</div>
+            <div class="alert-error error-people">Can't be zero</div>
           </div>
           <div class="input-wrapper">
             <img src="/images/icon-person.svg" alt="person-icon" />
             <input
-              type="text"
+              type="number"
               class="input-text"
               name="input-people"
               id="input-people"
-              placeholder="#"
             />
           </div>
         </div>
@@ -113,6 +118,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Benjamin Cho</a>.
     </div> -->
-    <script src='app.js'></script>
+    <script src="app.js"></script>
   </body>
 </html>

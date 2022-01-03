@@ -35,6 +35,11 @@ input {
   &:focus {
     outline: none;
   }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
 .logo {
@@ -138,7 +143,6 @@ input {
       background: $strong-cyan;
       color: $dark-cyan;
     }
-
   }
   #input-custom-tip {
     background: $light-grayish-cyan2;
@@ -229,9 +233,6 @@ input {
   .btns-wrapper > .btn {
     width: 29%;
   }
-
-
-
 
   .card-output {
     height: 450px;
